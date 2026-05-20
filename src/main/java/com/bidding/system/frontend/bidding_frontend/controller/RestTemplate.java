@@ -9,5 +9,4 @@ package com.bidding.system.frontend.bidding_frontend.controller;
  * @author Aluno
  */
 public class RestTemplate {
-    
 }
