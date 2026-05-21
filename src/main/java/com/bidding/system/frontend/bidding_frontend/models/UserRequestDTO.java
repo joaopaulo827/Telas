@@ -9,7 +9,7 @@ package com.bidding.system.frontend.bidding_frontend.models;
  * @author Aluno
  */
 public class UserRequestDTO {
-    private String email;
+     private String email;
     private String senha;
 
     public UserRequestDTO() {
@@ -35,5 +35,5 @@ public class UserRequestDTO {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-    
+
 }

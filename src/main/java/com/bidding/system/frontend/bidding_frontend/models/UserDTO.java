@@ -9,10 +9,14 @@ package com.bidding.system.frontend.bidding_frontend.models;
  * @author Aluno
  */
 public class UserDTO {
-    private Long id;
+ private Long id;
+
     private String nome;
+
     private String email;
+
     private String senha;
+
     private String role;
 
     public UserDTO() {
@@ -65,5 +69,7 @@ public class UserDTO {
     public void setRole(String role) {
         this.role = role;
     }
-    
+
+  
+  
 }

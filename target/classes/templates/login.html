@@ -10,6 +10,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div>TODO write content</div>
+        <div>Tela de Login</div>
+        <form th:action "@{\logar}">
+            <label>Email:</label>
+            <input type="email" th:field "{email}"/><br />
+            <label>Senha:</label>
+            <input type="password" th:field "{senha}"/><br />
+            <button type="submit">Logar</button>
+        </form>
     </body>
 </html>
