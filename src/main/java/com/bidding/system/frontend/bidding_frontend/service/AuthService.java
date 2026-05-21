@@ -20,9 +20,7 @@ public class AuthService {
     private final String BASE_URL = "http://localhost:9000/api";
     public String Logar(UserRequestDTO user){
         HttpEntity<UserRequestDTO> body = new HttpEntity<>(
-        user,
-        HttpEntity.EMPTY
-    )
-    return restTemplate.exchange(BASE_URL + "/auth/logar",HttpMethod.POST, HttpEntity.EMPTY);
+        user);
+    return restTemplate.exchange(BASE_URL + "/auth/logar",HttpMethod.POST,body,String.class).getBody();
     }        
 }

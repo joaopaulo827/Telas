@@ -41,6 +41,8 @@ public class AuthController {
             @ModelAttribute UserRequestDTO credenciais,
             HttpSession session){
     session.setAttribute("email", credenciais.getEmail());
+    String token = authservice.Logar(credenciais);
+    
     return "redirect:/";
     }
 }
