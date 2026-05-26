@@ -5,8 +5,10 @@
 package com.bidding.system.frontend.bidding_frontend.controller;
 
 
+import com.bidding.system.frontend.bidding_frontend.models.EditalDTO;
+import com.bidding.system.frontend.bidding_frontend.models.UserDTO;
 import com.bidding.system.frontend.bidding_frontend.models.UserRequestDTO;
-import com.bidding.system.frontend.bidding_frontend.service.AuthService;
+import com.bidding.system.frontend.bidding_frontend.service.AuthRestClientService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,12 +24,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class AuthController {
     @Autowired
-    public AuthService authservice;
+    public AuthRestClientService authservice;
     
     @GetMapping("/")
-    public String home(){
+    public String home(
+    HttpSession session
+    ){
         return "index";
     }
+    
     @GetMapping("/login")
     public String login(
             Model model
@@ -36,13 +41,39 @@ public class AuthController {
         model.addAttribute("credenciais", credenciais);
         return "login";
     }
+    
     @PostMapping("/logar")
     public String logar(
             @ModelAttribute UserRequestDTO credenciais,
             HttpSession session){
-    session.setAttribute("email", credenciais.getEmail());
-    String token = authservice.Logar(credenciais);
+        String token = authservice.logar(credenciais);
+        System.out.println("token: "+token);
+        session.setAttribute("token", token);
+        return "redirect:/";
+    }
     
-    return "redirect:/";
+    @GetMapping("/registrar")
+    public String registrar(
+            Model model
+    ){
+        UserDTO newUser = new UserDTO();
+        model.addAttribute("user", newUser);
+        return "registrar";
+    }
+    
+        @PostMapping("/registrar")
+    public String mandarRegistro(
+            @ModelAttribute UserDTO user
+    ) {
+        authservice.registrar(user);
+        return "redirect:/login";
+    }
+    @GetMapping("/editais")
+    public String editar(
+            Model model
+    ){
+        EditalDTO newEdital= new EditalDTO();
+        model.addAttribute("edital", newEdital);
+        return "editais";
     }
 }

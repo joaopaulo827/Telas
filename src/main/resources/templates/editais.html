@@ -5,22 +5,28 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 -->
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
-        <title>TODO supply a title</title>
+        <title>Tela dos editais</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-            <form th:action="@{/salvar}" th:object="${funcionario}" method="post">
-                <input type="hidden" th:field="*{id}" /><br />
-                <label>Nome:</label>
-                <input type="text" th:field="*{nome}" /><br />
-                <label>Email:</label>
-                <input type="text" th:field="*{email}" /><br />
-                <label>senha:</label>
-                <input type="password" th:field="*{senha}" /><br />
-                <label>Role:</label>
-                <input type="text" th:field="*{role}" /><br />
-                <button type="submit">Salvar</button>
-            </form>
+        <h2>Edital</h2>
+        <div>
+        <a href="./login"><button>Voltar</button></a>
+        </div>
+            <table>
+                <tr>
+                    <th>Título</th>
+                    <th>Descrição</th>
+                    <th>Data de fechamento</th>
+                    <th>Status</th>
+                </tr>
+                <tr th:each="f : ${edital}">
+                    <td th:text="${f.titulo}"></td>
+                    <td th:text="${f.descricao}"></td>
+                    <td th:text="${f.dataFechamento}"></td>
+                    <td th:text="${f.status}"></td>
+                </tr>
+            </table>
     </body>
 </html>

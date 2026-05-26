@@ -5,17 +5,16 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 -->
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
-        <title>TODO supply a title</title>
+        <title>Tela de Login</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div>Tela de Login</div>
-        <form th:action "@{\logar}">
+        <form th:action="@{/logar}" th:object="${credenciais}" method="post">
             <label>Email:</label>
-            <input type="email" th:field "{email}"/><br />
+            <input type="email" th:field="*{email}"/><br />
             <label>Senha:</label>
-            <input type="password" th:field "{senha}"/><br />
+            <input type="password" th:field="*{senha}"/><br />
             <button type="submit">Logar</button>
         </form>
     </body>
