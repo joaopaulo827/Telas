@@ -5,7 +5,7 @@
 package com.bidding.system.frontend.bidding_frontend.controller;
 
 
-import com.bidding.system.frontend.bidding_frontend.models.EditalDTO;
+
 import com.bidding.system.frontend.bidding_frontend.models.UserDTO;
 import com.bidding.system.frontend.bidding_frontend.models.UserRequestDTO;
 import com.bidding.system.frontend.bidding_frontend.service.AuthRestClientService;
@@ -67,13 +67,5 @@ public class AuthController {
     ) {
         authservice.registrar(user);
         return "redirect:/login";
-    }
-    @GetMapping("/editais")
-    public String editar(
-            Model model
-    ){
-        EditalDTO newEdital= new EditalDTO();
-        model.addAttribute("edital", newEdital);
-        return "editais";
     }
 }

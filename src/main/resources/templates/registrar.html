@@ -10,17 +10,48 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
+        <style>
+    body{
+        background-color: #333333;
+        
+    }
+        h2{
+        color: #99ffff;
+        font-size: 40px;
+        text-align: center;
+        padding-top: 100px;
+        
+    }
+    form{
+        color: #0dcaf0;
+        font-size: 40px;
+        text-align: center;
+        padding-top: 100px;        
+    }
+    label{
+        background-color: #006666;
+            border-radius: 10px;
+    }
+    button{
+        color:#0000ff;
+        font-size: 30px;
+        background-color: #ccccff;
+        border-radius: 10px;
+    }
+        </style>
         <h2>REGISTRAR</h2>
         <form th:action="@{/registrar}" 
-              th:object="${user}" method="post"        
+              th:object="${user}" method="post"
+              class="row g-3"
         >
-            <label>Nome: </label>
-            <input type="text" th:field="*{nome}" placeholder="Lambarildo" />
+            
+            <label>Nome:</label>
+            <input type="text" th:field="*{nome}" placeholder="Lambarildo" />            
             <br/><br/>
-            <label>Email: </label>
-             <input type="email" th:field="*{email}" placeholder="Lambarildo.peixe@hotmail.com" />
+            <label>Email:</label>
+             <input type="email" th:field="*{email}" placeholder="Lambarildo.peixe@hotmail.com" />            
             <br/><br/>
-            <label>Senha: </label>
+            <label>Senha:</label>
              <input type="password" th:field="*{senha}"/>
             <br/><br/>
             <button type="submit"> Cadastrar</button>

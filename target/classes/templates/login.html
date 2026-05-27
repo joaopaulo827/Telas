@@ -10,11 +10,41 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
+        <style>
+    body{
+        background-color: #333333;
+        
+    }
+    div{
+        color: #99ffff;
+        font-size: 40px;
+        text-align: center;
+         padding-top: 100px;
+         
+    }
+    form{
+        color: #0dcaf0;
+        font-size: 40px;
+        text-align: center;
+        padding-top: 100px;
+    }
+    label{
+        background-color: #006666;
+        border-radius: 10px;
+    }
+    button{
+        color:#0000ff;
+        font-size: 30px;
+        background-color: #ccccff;
+        border-radius: 10px;
+    }
+        </style>
+        <div>LOGIN</div>
         <form th:action="@{/logar}" th:object="${credenciais}" method="post">
             <label>Email:</label>
-            <input type="email" th:field="*{email}"/><br />
+            <input type="email" th:field="*{email}"/><br/>
             <label>Senha:</label>
-            <input type="password" th:field="*{senha}"/><br />
+            <input type="password" th:field="*{senha}"/><br/>
             <button type="submit">Logar</button>
         </form>
     </body>

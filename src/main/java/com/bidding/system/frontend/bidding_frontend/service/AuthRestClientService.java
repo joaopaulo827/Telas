@@ -26,7 +26,7 @@ public class AuthRestClientService {
     }
     public String logar(UserRequestDTO user){
         return restClient.post()
-                .uri("/authenticar/logar")
+                .uri("/auth/logar")
                 .body(user)
                 .retrieve()
                 .body(String.class);
@@ -36,7 +36,7 @@ public class AuthRestClientService {
         String retorno = 
             restClient
                 .post()
-                .uri("/autenticar/registrar")
+                .uri("/auth/registrar")
                 .body(user)
                 .retrieve()
                 .body(String.class);
