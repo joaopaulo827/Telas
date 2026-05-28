@@ -61,11 +61,18 @@ public class AuthController {
         return "registrar";
     }
     
-        @PostMapping("/registrar")
+    @PostMapping("/registrar")
     public String mandarRegistro(
             @ModelAttribute UserDTO user
     ) {
         authservice.registrar(user);
         return "redirect:/login";
+    }
+    @GetMapping("/logout")
+    public String logout(
+     HttpSession session
+    ){
+        session.setAttribute("token", "");
+        return "/logout";
     }
 }

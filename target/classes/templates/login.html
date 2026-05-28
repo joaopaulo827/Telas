@@ -8,34 +8,31 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <title>Tela de Login</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <a href="/"><button>Voltar ao inicio</button></a>
     </head>
     <body>
         <style>
-    body{
-        background-color: #333333;
-        
-    }
     div{
-        color: #99ffff;
-        font-size: 40px;
-        text-align: center;
-         padding-top: 100px;
+        font-size: 40px;        
+         text-align: center;
+         padding-bottom: 40px;
          
     }
     form{
-        color: #0dcaf0;
         font-size: 40px;
         text-align: center;
-        padding-top: 100px;
-    }
-    label{
-        background-color: #006666;
+        padding: 40px;
+        box-sizing: content-box;
+        border: 1px solid #200;
         border-radius: 10px;
+        background-color:#999999;
+        border-width: 200px;
+        border-color: #ffffff;   
     }
     button{
-        color:#0000ff;
+        color:#ffffff;
         font-size: 30px;
-        background-color: #ccccff;
+        background-color: #000000;
         border-radius: 10px;
     }
         </style>
@@ -47,5 +44,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             <input type="password" th:field="*{senha}"/><br/>
             <button type="submit">Logar</button>
         </form>
+        <div>
+            <a href="./registrar"><button>Se não tiver login registrar</button></a>
+        </div>
     </body>
 </html>
+

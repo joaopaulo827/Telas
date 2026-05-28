@@ -8,43 +8,37 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <title>Tela para registrar usuario</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <a href="./login"><button>Voltar ao login</button></a>
     </head>
     <body>
         <style>
-    body{
-        background-color: #333333;
-        
-    }
         h2{
-        color: #99ffff;
         font-size: 40px;
         text-align: center;
-        padding-top: 100px;
         
     }
     form{
-        color: #0dcaf0;
+       
         font-size: 40px;
         text-align: center;
-        padding-top: 100px;        
-    }
-    label{
-        background-color: #006666;
-            border-radius: 10px;
+        padding: 40px;
+        box-sizing: content-box;
+        border: 1px solid #200;
+        border-radius: 10px;
+        background-color:#999999;
+        border-width: 150px;
+        border-color: #ffffff;
     }
     button{
-        color:#0000ff;
+        color:#ffffff;
         font-size: 30px;
-        background-color: #ccccff;
+        background-color: #000000;
         border-radius: 10px;
     }
         </style>
         <h2>REGISTRAR</h2>
         <form th:action="@{/registrar}" 
-              th:object="${user}" method="post"
-              class="row g-3"
-        >
-            
+              th:object="${user}" method="post">            
             <label>Nome:</label>
             <input type="text" th:field="*{nome}" placeholder="Lambarildo" />            
             <br/><br/>
@@ -56,5 +50,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             <br/><br/>
             <button type="submit"> Cadastrar</button>
         </form>
+</div>
+    
     </body>
 </html>
